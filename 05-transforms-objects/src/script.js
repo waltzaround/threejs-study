@@ -14,12 +14,15 @@ const geometry = new THREE.BoxGeometry(1, 1, 1);
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
-mesh.position.x = 0.5;
-mesh.position.y = -0.6;
-mesh.position.z = 1;
+// mesh.position.x = 0.5;
+// mesh.position.y = -0.6;
+// mesh.position.z = 1;
 
+mesh.position.set(0, -0.6, 1);
 mesh.rotation.x = 1.25;
 mesh.rotation.y = 1.25;
+mesh.position.normalize();
+console.log(mesh.position.length());
 /**
  * Sizes
  */
@@ -35,7 +38,8 @@ const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
 camera.position.z = 3;
 scene.add(camera);
 
-console.log(mesh.position.distanceTo(camera.position));
+console.log(mesh.position.normalize(camera.position));
+console.log("distance to camera: " + mesh.position.distanceTo(camera.position));
 /**
  * Renderer
  */
