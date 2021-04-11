@@ -1,5 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
+import { Group } from "three";
 
 // Canvas
 const canvas = document.querySelector("canvas.webgl");
@@ -10,10 +11,35 @@ const scene = new THREE.Scene();
 /**
  * Objects
  */
+
+const potatoGroup = new THREE.Group();
+scene.add(potatoGroup);
+potatoGroup.position.y = 0.2;
+const cube1 = new THREE.Mesh(
+  new THREE.BoxGeometry(1, 1, 1),
+  new THREE.MeshBasicMaterial({ color: 0xff0000 })
+);
+
+cube1.position.set(-1, 0, 0);
+potatoGroup.add(cube1);
+
+const cube2 = new THREE.Mesh(
+  new THREE.BoxGeometry(1, 1, 1),
+  new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+);
+potatoGroup.add(cube2);
+
+const cube3 = new THREE.Mesh(
+  new THREE.BoxGeometry(1, 1, 1),
+  new THREE.MeshBasicMaterial({ color: 0x0000ff })
+);
+cube3.position.set(1, 0, 0);
+potatoGroup.add(cube3);
+
 const geometry = new THREE.BoxGeometry(1, 1, 1);
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
 const mesh = new THREE.Mesh(geometry, material);
-scene.add(mesh);
+// scene.add(mesh);
 
 // Positioning
 // mesh.position.x = 0.5;
