@@ -14,10 +14,11 @@ const geometry = new THREE.BoxGeometry(1, 1, 1);
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
+mesh.position.x = 0.5;
+mesh.position.y = -0.6;
+mesh.position.z = 1;
+console.log(mesh.position.length());
 
-// mesh.position.x = 0.5;
-// mesh.position.y = -0.6;
-// mesh.position.z = 1;
 mesh.rotation.x = 1.25;
 mesh.rotation.y = 1.25;
 /**
