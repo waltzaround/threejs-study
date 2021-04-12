@@ -42,11 +42,11 @@ const tick = () => {
   const currentTime = Date.now();
   const deltaTime = currentTime - time;
   time = currentTime;
-  console.log(deltaTime);
+  //   console.log(deltaTime);
 
   // update object rotation
   mesh.rotation.y += 0.001 * deltaTime;
-  mesh.rotation.x += 0.001 * deltaTime;
+  //   mesh.rotation.x += 0.001 * deltaTime;
   //   mesh.rotation.z += 0.025;
 
   // update render
