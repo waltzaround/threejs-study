@@ -33,7 +33,17 @@ renderer.render(scene, camera);
 
 // Animations
 const tick = () => {
-  console.log("tick");
+  //   console.log("tick");
+
+  // update object rotation
+  mesh.rotation.y += 0.025;
+  mesh.rotation.x += 0.025;
+  mesh.rotation.z += 0.025;
+
+  // update render
+  renderer.render(scene, camera);
+
   window.requestAnimationFrame(tick);
 };
+
 tick();
