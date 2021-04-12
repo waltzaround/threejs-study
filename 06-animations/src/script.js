@@ -60,6 +60,8 @@ const tick = () => {
   mesh.position.y = Math.sin(elapsedTime);
   mesh.position.z = Math.tan(elapsedTime);
 
+  camera.lookAt(mesh.position);
+
   // update render
   renderer.render(scene, camera);
 
